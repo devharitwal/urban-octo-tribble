@@ -30,13 +30,10 @@ app.get('/', (req, res) => {
 //routes 
 app.post('/generate', (req, res) => {
     // here take the input from the form  and generate the QR code from it. 
-    let data = '';
+    let data = req.body.url;
 
     if (data.length === 0) {
         data = "https://tinyurl.com/47a2w8zj";
-    }
-    else {
-        data = sanitizeInput(req.body.url);
     }
     x.toDataURL(data, (err, src) => {
         res.send(`
