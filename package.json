@@ -4,8 +4,8 @@
   "description": "A simple qr code generator from a link ",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "./node_modules/.bin/netlify-lambda build src"
+    "start:lambda": "netlify-lambda serve src/api",
+    "build:lambda": "netlify-lambda build src/api"
   },
   "keywords": [
     "qr",
