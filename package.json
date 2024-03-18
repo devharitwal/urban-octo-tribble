@@ -4,8 +4,7 @@
   "description": "A simple qr code generator from a link ",
   "main": "index.js",
   "scripts": {
-    "start:lambda": "netlify-lambda serve src/api",
-    "build:lambda": "netlify-lambda build src/api"
+    "start": "node index.js"
   },
   "keywords": [
     "qr",
@@ -18,10 +17,7 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.3",
-    "netlify-cli": "^17.19.5",
-    "netlify-lambda": "^2.0.16",
     "qrcode": "^1.5.3",
-    "sanitize": "^2.1.2",
-    "serverless-http": "^3.2.0"
+    "sanitize": "^2.1.2"
   }
 }
