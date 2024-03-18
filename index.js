@@ -22,13 +22,13 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 //routes 
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index');
 });
 
 
 //routes 
-router.post('/generate', (req, res) => {
+app.post('/generate', (req, res) => {
     // here take the input from the form  and generate the QR code from it. 
     let data = '';
 
