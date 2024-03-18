@@ -4,9 +4,14 @@ const express = require('express');
 const sanitizeInput = require('sanitize');
 const serverless = require('serverless-http');
 
+
 const app = express();
 const port = 8080;
+
 const router = express.Router();
+
+
+
 // For parsing application/json
 app.use(express.json());
 // For parsing application/x-www-form-urlencoded
@@ -17,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 //routes 
-router.get('/', (req, res) => {
+router.get('/index', (req, res) => {
     res.render('index');
 });
 
@@ -48,7 +53,9 @@ router.post('/generate', (req, res) => {
 
 });
 
+app.use('/.netlify/functions/api', router);
+
 app.listen(port);
 
-app.use('/.netlify/functions/api', router);
+
 module.exports.handler = serverless(app);
