@@ -11,7 +11,7 @@ const port = 8080;
 const router = express.Router();
 
 
-
+app.use(express.static('public'));
 // For parsing application/json
 app.use(express.json());
 // For parsing application/x-www-form-urlencoded
@@ -24,12 +24,8 @@ app.set('view engine', 'ejs');
 
 //routes 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.send(__dirname, './public');
 });
-
-
-
-
 
 //routes 
 app.post('/generate', (req, res) => {
@@ -42,8 +38,6 @@ app.post('/generate', (req, res) => {
     x.toDataURL(data, (err, src) => {
         res.render('image', { image: src });
     });
-
-
 });
 
 
